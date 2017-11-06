@@ -1,20 +1,16 @@
 module.exports = function (app) {
   return {
-    validate: function (user) {
+    validate: function (contact) {
       var success = true
         , message = "Requisição Válida";
 
-      if (!isValid(user.username)) {
+      if (!isValid(contact.username)) {
         success = false;
         message = "propriedade Username está inválida";
-      } else if (!isValid(user.email)) {
+      } else if (!isValid(contact.email)) {
         success = false;
         message = "propriedade Email está inválida";
-      } else if (!isValid(user.password)) {
-        success = false;
-        message = "propriedade Password está inválida";
       }
-
       return { success: success, message: message };
     }
   };

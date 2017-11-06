@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        Usuários
+    </div>
+    <div class="card-block">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Email</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users" ng-hide="user._id === myId">
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" ng-click="addContact(user)">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

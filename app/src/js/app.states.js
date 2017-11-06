@@ -14,20 +14,27 @@
           data: {pageTitle: 'Login'},
           controller: 'LoginCtrl'
         })
-        // .state('dashboard', {
-        //   abstract: true,
-        //   url: "",
-        //   templateUrl: "views/partials/common/content.html"
-        // })
-        // .state('dashboard.home', {
-        //   url: "/home",
-        //   templateUrl: "views/pages/home.html",
-        //   data: {pageTitle: 'FOTOSENSORES'},
-        //   params: {
-        //     selectedDetection: null,
-        //     selectedIrregularity: null
-        //   },
-        //   controller: 'DetectionCtrl'
-        // })
+        .state("signin", {
+          url: "/signin",
+          templateUrl: "views/pages/signin.html",
+          data: {pageTitle: 'Signin'},
+          controller: 'SigninCtrl'
+        })
+        .state("home", {
+          abstract: true,
+          url: "",
+          templateUrl: "views/partials/navbar.html",
+          controller: "NavbarCtrl"
+        })
+        .state("home.chat", {
+          url: "/chat",
+          templateUrl: "views/pages/chat.html",
+          data: {pageTitle: 'Chat'}
+        })
+        .state("home.add", {
+          url: "/adicionar",
+          templateUrl: "views/pages/add.html",
+          data: {pageTitle: 'Adicionar'}
+        });
     }]);
 }());

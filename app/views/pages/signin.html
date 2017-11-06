@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="card">
+            <h3 class="card-header">Sign in</h3>
+            <div class="card-block">
+                <form name="signinForm" ng-submit="submitSignin()" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username" id="username"
+                               placeholder="Enter username" ng-model="entry.username" required>
+                        <div ng-show="signinForm.username.$invalid && signinForm.$submitted">
+                            <small ng-show="signinForm.username.$error.required">obrigatório*</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                               placeholder="Enter email" ng-model="entry.email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <div ng-show="signinForm.email.$invalid && signinForm.$submitted">
+                            <small ng-show="signinForm.email.$error.required">obrigatório*</small>
+                            <small ng-show="signinForm.email.$error.email">não é um email válido*</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="Password" ng-model="entry.password" ng-minlength="8" required>
+                        <div ng-show="signinForm.password.$invalid && signinForm.$submitted">
+                            <small ng-show="signinForm.password.$error.required">obrigatório*</small>
+                            <small ng-show="signinForm.password.$error.minlength">8 caracteres no mínimo*</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordRepeated">Repeat your password</label>
+                        <input type="password" class="form-control" name="passwordRepeated" id="passwordRepeated"
+                               placeholder="Repeat your password" ng-model="entry.passwordRepeated" ng-minlength="8"
+                               required>
+                        <div ng-show="signinForm.passwordRepeated.$invalid && signinForm.$submitted">
+                            <small ng-show="signinForm.passwordRepeated.$error.required">obrigatório*</small>
+                            <small ng-show="signinForm.passwordRepeated.$error.minlength">8 caracteres no mínimo*</small>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

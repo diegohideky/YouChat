@@ -5,19 +5,19 @@
 var express    = require("express")
   , path       = require("path")
   , bodyParser = require("body-parser")
-  // , session    = require("express-session")
-  // , passport   = require("passport")
+  , session    = require("express-session")
+  , passport   = require("passport")
   , load       = require("express-load")
-  // , error      = require("./middlewares/error")
+  , error      = require("./resources/middlewares/error")
   , app        = express();
 
-// app.use(session({
-//   secret: '',
-//   resave: false,
-//   saveUninitialized: true
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({
+  secret: 'youchat man',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 // app.use(error.notFound);
